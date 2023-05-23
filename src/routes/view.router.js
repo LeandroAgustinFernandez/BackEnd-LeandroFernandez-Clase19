@@ -75,7 +75,7 @@ router.get("/products", auth, async (request, response) => {
     style: "home",
     sort,
     query,
-    user: { email: request.session.email, rol: request.session.rol },
+    user: { email: request.session.email, rol: request.session.rol, name: request.session.name },
     logued: true,
   });
 });

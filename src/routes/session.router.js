@@ -10,6 +10,7 @@ router.post("/login", async (request, response) => {
     request.body.email === "adminCoder@coder.com" &&
     request.body.password === "adminCod3r123"
   ) {
+    request.session.name = `Coder House`
     request.session.email = request.body.email;
     request.session.rol = "admin";
     return response.send({
@@ -20,6 +21,7 @@ router.post("/login", async (request, response) => {
   if (res?.error) {
     response.status(400).send({ error: res.error });
   } else {
+    request.session.name = `${res.payload.first_name} ${res.payload.last_name}`;
     request.session.email = request.body.email;
     request.session.rol = "usuario";
     response.send({

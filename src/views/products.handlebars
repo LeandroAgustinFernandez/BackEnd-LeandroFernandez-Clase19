@@ -7,7 +7,8 @@
   <section class="products">
     <article>
       <div style="color: #333; text-align: center;">
-        <h2>Bienvenido: {{user.email}}</h2>
+        <h2>Bienvenido: {{user.name}}</h2>
+        <h3>{{user.email}}</h3>
         <p>Rol: {{user.rol}}</p>
       </div>
       <form action="/products" method="get" class="form_search">
